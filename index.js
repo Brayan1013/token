@@ -5,6 +5,8 @@ const qs = require('querystring');
 const axios = require('axios');
 
 
+let port = process.env.PORT || 3000;
+
 app.get('/', function (req, res) {
     res.send('Hello World')
 });
@@ -42,4 +44,7 @@ app.get('/token', (req, res) => {
     })
 });
 
-app.listen(3000)
+app.listen(port, () => {
+    console.log("Listening on port " + port);
+
+})
